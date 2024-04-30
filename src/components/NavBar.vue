@@ -1,10 +1,10 @@
 <template>
     <nav>
-        <div class="logo">
+        <div class="logo" ref="logo">
             <h1>TRIVE </h1>TRAVELS
         </div>
         <div class="links">
-            <ul class="navbar">
+            <ul class="navbar" ref="links">
                 <li class="nav-item"><a href="#home" class="nav-links">Home</a></li>
                 <li class="nav-item"><a href="#features" class="nav-links">Features</a></li>
                 <li class="nav-item"><a href="#pricing" class="nav-links">Pricing</a></li>
@@ -14,8 +14,22 @@
     </nav>
 </template>
 <script>
+import { gsap } from 'gsap';
 export default {
     name: "NavBar",
+    mounted() {
+        gsap.from("this.$refs.links.children", {
+            y: "-50",
+            duration: 1,
+            ease: 'back.out',
+            stagger: 0.25,
+        })
+        gsap.from(".logo", {
+            y: "-100",
+            duration: 1,
+            ease: 'back.out',
+        })
+    },
 };
 </script>
 <style scoped>

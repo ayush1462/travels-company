@@ -1,4 +1,5 @@
 <template>
+    <hr>
     <section id="contactPage">
         <h1 class="sectionTitle">CONTACT NOW</h1>
         <div class="contact">
